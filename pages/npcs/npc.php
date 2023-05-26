@@ -146,7 +146,7 @@ $npc_data = '
             <tr>
                 <td style="text-align:right"><b>Special attacks</b>
                 </td>
-                <td>' . SpecialAttacks($npc["npcspecialattks"]) . '</td>
+                <td>' . SpecialAttacks($npc["special_abilities"]) . '</td>
             </tr>
         </tbody>
     </table>

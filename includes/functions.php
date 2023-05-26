@@ -590,78 +590,221 @@ function CalcBuffDuration($lvl, $form, $duration)
 
 function SpecialAttacks($att)
 {
-    var_dump($att);
     $data = '';
     $v    = '';
-    // from mobs.h
-    for ($i = 0; $i < strlen($att); $i++) {
-        switch ($att{$i}) {
-            case 'A' :
-                $data .= $v . " Immune to melee";
-                $v    = ', ';
-                break;
-            case 'B' :
-                $data .= $v . " Immune to magic";
-                $v    = ', ';
-                break;
-            case 'C' :
-                $data .= $v . " Uncharmable";
-                $v    = ', ';
-                break;
-            case 'D' :
-                $data .= $v . " Unfearable";
-                $v    = ', ';
-                break;
-            case 'E' :
-                $data .= $v . " Enrage";
-                $v    = ', ';
-                break;
-            case 'F' :
-                $data .= $v . " Flurry";
-                $v    = ', ';
-                break;
-            case 'f' :
-                $data .= $v . " Immune to fleeing";
-                $v    = ', ';
-                break;
-            case 'I' :
-                $data .= $v . " Unsnarable";
-                $v    = ', ';
-                break;
-            case 'M' :
-                $data .= $v . " Unmezzable";
-                $v    = ', ';
-                break;
-            case 'N' :
-                $data .= $v . " Unstunable";
-                $v    = ', ';
-                break;
-            case 'O' :
-                $data .= $v . " Immune to melee except bane";
-                $v    = ', ';
-                break;
-            case 'Q' :
-                $data .= $v . " Quadruple Attack";
-                $v    = ', ';
-                break;
-            case 'R' :
-                $data .= $v . " Rampage";
-                $v    = ', ';
-                break;
-            case 'S' :
+    $abilities = explode("^", $att);
+    foreach($abilities as $ability)
+    {
+        $current_ability = explode(",", $ability);
+        
+        switch($current_ability[0])
+        {
+            case '1':
                 $data .= $v . " Summon";
                 $v    = ', ';
                 break;
-            case 'T' :
+            case '2' :
+                $data .= $v . " Enrage";
+                $v    = ', ';
+                break;
+            case '3' :
+                $data .= $v . " Rampage";
+                $v    = ', ';
+                break;
+            case '4' :
+                $data .= $v . " Area Rampage";
+                $v    = ', ';
+                break;
+            case '5' :
+                $data .= $v . " Flurry";
+                $v    = ', ';
+                break;
+            case '6' :
                 $data .= $v . " Triple Attack";
                 $v    = ', ';
                 break;
-            case 'U' :
+            case '7' :
+                $data .= $v . " Quadruple Attack";
+                $v    = ', ';
+                break;
+            case '8' :
+                $data .= $v . " Dual Wield";
+                $v    = ', ';
+                break;
+            case '9' :
+                $data .= $v . " Bane Attack";
+                $v    = ', ';
+                break;
+            case '10' :
+                $data .= $v . " Immune to melee except magical";
+                $v    = ', ';
+                break;
+            case '11' :
+                $data .= $v . " Ranged Attack";
+                $v    = ', ';
+                break;
+            case '12' :
                 $data .= $v . " Unslowable";
                 $v    = ', ';
                 break;
-            case 'W' :
-                $data .= $v . " Immune to melee except magical";
+            case '13' :
+                $data .= $v . " Unmezzable";
+                $v    = ', ';
+                break;
+            case '14' :
+                $data .= $v . " Uncharmable";
+                $v    = ', ';
+                break;
+            case '15' :
+                $data .= $v . " Unstunable";
+                $v    = ', ';
+                break;
+            case '16' :
+                $data .= $v . " Unsnarable";
+                $v    = ', ';
+                break;
+            case '17' :
+                $data .= $v . " Unfearable";
+                $v    = ', ';
+                break;
+            case '18' :
+                $data .= $v . " Immune to dispell";
+                $v    = ', ';
+                break;
+            case '19' :
+                $data .= $v . " Immune to melee";
+                $v    = ', ';
+                break;
+            case '20' :
+                $data .= $v . " Immune to magic";
+                $v    = ', ';
+                break;
+            case '21' :
+                $data .= $v . " Immune to fleeing";
+                $v    = ', ';
+                break;
+            case '22' :
+                $data .= $v . " Immune to non-Bane damage";
+                $v    = ', ';
+                break;
+            case '23' :
+                $data .= $v . " Immune to non-magical damage";
+                $v    = ', ';
+                break;
+            case '24' :
+                $data .= $v . " Will not aggro";
+                $v    = ', ';
+                break;
+            case '25' :
+                $data .= $v . " Immune to aggro";
+                $v    = ', ';
+                break;
+            case '26' :
+                $data .= $v . " Resist ranged spells ('Belly Caster')";
+                $v    = ', ';
+                break;
+            case '27' :
+                $data .= $v . " See through Feign Death";
+                $v    = ', ';
+                break;
+            case '28' :
+                $data .= $v . " Immune to taunt";
+                $v    = ', ';
+                break;
+            case '29' :
+                $data .= $v . " Tunnel Vision";
+                $v    = ', ';
+                break;
+            case '30' :
+                $data .= $v . " Does not buff/heal allies";
+                $v    = ', ';
+                break;
+            case '31' :
+                $data .= $v . " Unpacifiable";
+                $v    = ', ';
+                break;
+            case '32' :
+                $data .= $v . " Leashed";
+                $v    = ', ';
+                break;
+            case '33' :
+                $data .= $v . " Tethered";
+                $v    = ', ';
+                break;
+            case '34' :
+                $data .= $v . " Destructible object";
+                $v    = ', ';
+                break;
+            case '35' :
+                $data .= $v . " No harm from players";
+                $v    = ', ';
+                break;
+            case '36' :
+                $data .= $v . " Always flee";
+                $v    = ', ';
+                break;
+            case '37' :
+                $data .= $v . " Flees at ".$current_ability[1]."%";
+                $v    = ', ';
+                break;
+            case '38' :
+                $data .= $v . " Can be buffed by players";
+                $v    = ', ';
+                break;
+            case '39' :
+                $data .= $v . " Cannot melee";
+                $v    = ', ';
+                break;
+            case '40' :
+                $data .= $v . " Chase distance ".$current_ability[1]." to ".$current_ability[2];
+                $v    = ', ';
+                break;
+            case '41' :
+                $data .= $v . " Can take aggro off players";
+                $v    = ', ';
+                break;
+            case '42' :
+                $data .= $v . " Ignore Root aggro";
+                $v    = ', ';
+                break;
+            case '43' :
+                $data .= $v . " Cast resisting difference ".$current_ability[1];
+                $v    = ', ';
+                break;
+            case '44' :
+                $data .= $v . " Counter avoid damage";
+                $v    = ', ';
+                break;
+            case '45' :
+                $data .= $v . " Proximity aggro";
+                $v    = ', ';
+                break;
+            case '46' :
+                $data .= $v . " Immune to ranged attacks";
+                $v    = ', ';
+                break;
+            case '47' :
+                $data .= $v . " Immune to client damage";
+                $v    = ', ';
+                break;
+            case '48' :
+                $data .= $v . " Immune to NPC damage";
+                $v    = ', ';
+                break;
+            case '49' :
+                $data .= $v . " Immune to client aggro";
+                $v    = ', ';
+                break;
+            case '50' :
+                $data .= $v . " Immune to NPC aggro";
+                $v    = ', ';
+                break;
+            case '51' :
+                $data .= $v . " Modify avoid damage";
+                $v    = ', ';
+                break;
+            case '52' :
+                $data .= $v . " Immune to Fading Memories";
                 $v    = ', ';
                 break;
         }
