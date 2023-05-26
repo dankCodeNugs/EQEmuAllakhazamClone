@@ -59,6 +59,7 @@ Simply click on the item you'd like to buy from a Player Bot below to have the l
     <p>storm giant toe</p>
     <p>woven frost giant beard</p>
     <p>giant warrior helmet</p>
+    <p>coldain head</p>
     <a href="#toc">Back to top</a>
 
     <!-- Leave this here -->
