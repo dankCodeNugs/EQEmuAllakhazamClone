@@ -183,6 +183,30 @@
                                                     </li>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td class="menuh" nowrap="1">Player Bots...</td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=player_bots_overview">System overview
+                                                            </a>
+                                                    </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=player_bots_usage">Usage
+                                                            </a>
+                                                    </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=player_bots_trading">Trading
+                                                            </a>
+                                                    </li>
+                                                </td>
+                                            </tr>
                                             </tbody>
                                         </table>
                                     </div>

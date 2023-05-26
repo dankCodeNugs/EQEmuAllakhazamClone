@@ -47,6 +47,12 @@ if ($route == "spells") {
     require_once('pages/npcs/advanced_npcs.php');
 } else if ($route == "global_search") {
     require_once('pages/global_search.php');
+} else if($route == "player_bots_overview") {
+    require_once('pages/player_bots/player_bots_overview.php');
+} else if($route == "player_bots_usage") {
+    require_once('pages/player_bots/player_bots_usage.php');
+} else if($route == "player_bots_trading") {
+    require_once('pages/player_bots/player_bots_trading.php');
 } else if ($route == "zone_era") {
     echo '<table class=\'display_table container_div\'><tr><td>';
     echo "<h2 class='section_header'>Zones</h2><br>";
