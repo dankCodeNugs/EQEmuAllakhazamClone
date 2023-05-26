@@ -94,11 +94,7 @@ $print_buffer .= "<table border='0' width='100%'>";
 $npc_attack_speed = "";
 if ($show_npcs_attack_speed == TRUE) {
     $npc_attack_speed = "<tr><td style='text-align:right'><b>Attack speed</td><td>";
-    if ($npc["attack_speed"] == 0) {
-        $npc_attack_speed .= "Normal (100%)";
-    } else {
-        $npc_attack_speed .= (100 + $npc["attack_speed"]) . "%";
-    }
+    $npc_attack_speed .= $npc["attack_delay"]/10 ."s";
     $print_buffer .= "</td></tr>";
 }
 
@@ -138,11 +134,41 @@ $npc_data = '
                 <td>' . number_format($npc["hp"]) . '</td>
             </tr>
             <tr>
+            <td style="text-align:right"><b>Regen (tick)</b>
+            </td>
+            <td>' . number_format($npc["hp_regen_rate"]) . '</td>
+        </tr>
+            <tr>
                 <td style="text-align:right"><b>Damage</b>
                 </td>
                 <td>' . $npc["mindmg"] . " to " . $npc["maxdmg"] . '</td>
             </tr>
             ' . $npc_attack_speed . '
+            <tr>
+                <td style="text-align:right"><b>Magic resistance: </b>
+                </td>
+                <td>' . $npc["MR"] . '</td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><b>Cold resistance: </b>
+                </td>
+                <td>' . $npc["CR"] . '</td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><b>Disease resistance: </b>
+                </td>
+                <td>' . $npc["DR"] . '</td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><b>Fire resistance: </b>
+                </td>
+                <td>' . $npc["FR"] . '</td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><b>Poison resistance: </b>
+                </td>
+                <td>' . $npc["PR"] . '</td>
+            </tr>
             <tr>
                 <td style="text-align:right"><b>Special attacks</b>
                 </td>
