@@ -134,6 +134,11 @@ $npc_data = '
                 <td>' . number_format($npc["hp"]) . '</td>
             </tr>
             <tr>
+                <td style="text-align:right"><b>Armor class</b>
+                </td>
+                <td>' . number_format($npc["AC"]) . '</td>
+            </tr>
+            <tr>
             <td style="text-align:right"><b>Regen (tick)</b>
             </td>
             <td>' . number_format($npc["hp_regen_rate"]) . '</td>
@@ -145,27 +150,27 @@ $npc_data = '
             </tr>
             ' . $npc_attack_speed . '
             <tr>
-                <td style="text-align:right"><b>Magic resistance: </b>
+                <td style="text-align:right"><b>Magic resistance </b>
                 </td>
                 <td>' . $npc["MR"] . '</td>
             </tr>
             <tr>
-                <td style="text-align:right"><b>Cold resistance: </b>
+                <td style="text-align:right"><b>Cold resistance </b>
                 </td>
                 <td>' . $npc["CR"] . '</td>
             </tr>
             <tr>
-                <td style="text-align:right"><b>Disease resistance: </b>
+                <td style="text-align:right"><b>Disease resistance </b>
                 </td>
                 <td>' . $npc["DR"] . '</td>
             </tr>
             <tr>
-                <td style="text-align:right"><b>Fire resistance: </b>
+                <td style="text-align:right"><b>Fire resistance </b>
                 </td>
                 <td>' . $npc["FR"] . '</td>
             </tr>
             <tr>
-                <td style="text-align:right"><b>Poison resistance: </b>
+                <td style="text-align:right"><b>Poison resistance </b>
                 </td>
                 <td>' . $npc["PR"] . '</td>
             </tr>
